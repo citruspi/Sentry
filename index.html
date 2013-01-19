@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sentry by citruspi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Sentry</h1>
+        <p>Papertrail Alerts via SMS</p>
+
+        <p class="view"><a href="https://github.com/citruspi/Sentry">View the Project on GitHub <small>citruspi/Sentry</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/citruspi/Sentry/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/citruspi/Sentry/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/citruspi/Sentry">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>Introduction</h3>
+
+<p>Sentry accepts Papertrail events (posted via the Webhook alerts) and sends them as SMS messages to your phone via Twilio.</p>
+
+<p>There are numerous uses for this:</p>
+
+<ul>
+<li>get an SMS whenever someone uses root to log into SSH</li>
+<li>get an SMS whenever your web application crashes</li>
+<li>get an SMS whenver Nginx or another service goes down</li>
+<li>etc.</li>
+</ul><p>You can pretty much adapt this to any situation.</p>
+
+<h3>Why?</h3>
+
+<p>I recently got hooked on Papertrail. I love their search alerts - you can get an alert whenever a certain string of text shows up in the logs. They had several options for sending you alerts: </p>
+
+<ul>
+<li>email</li>
+<li>webhook</li>
+<li>campfire</li>
+<li>etc.</li>
+</ul><p>But, no SMS. Sentry fixes that.</p>
+
+<h3>Configuration</h3>
+
+<h4>Sentry Side:</h4>
+
+<p>Install <code>flask</code> and <code>twilio</code>:</p>
+
+<pre><code>pip install -r requirements.txt
+</code></pre>
+
+<p>Change the Twilio Settings in <code>app.py</code>:</p>
+
+<pre><code>account_sid  = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+auth_token   = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+phone_number = "+1XXXXXXXXXX"
+from_number  = "+1XXXXXXXXXX" 
+</code></pre>
+
+<p>Run it:</p>
+
+<pre><code>python app.py
+</code></pre>
+
+<p>If you want to run it on Heroku (as I did), just add the <code>Procfile</code> and push it to Heroku.</p>
+
+<h4>Papertrail Side:</h4>
+
+<p>The first step is to set up an alert - <a href="http://help.papertrailapp.com/kb/how-it-works/alerts">there's a tutorial here</a>.</p>
+
+<p>Then, set the Webhook for the alert to <a href="">domain.com/sentry</a>, the URL for the Sentry app. I would suggest settings the <code>Frequency</code> to <code>Every Minute</code> so that you get alerts as fast as possible.</p>
+
+<h3>License</h3>
+
+<p>Zinc is open source and is distributed under the MIT License:</p>
+
+<pre><code>Copyright Â© 2012 Mihir Singh &lt;me@mihirsingh.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the â€œSoftwareâ€), to deal in 
+the Software without restriction, including without limitation the rights to 
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of 
+the Software, and to permit persons to whom the Software is furnished to do 
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED â€œAS ISâ€, WITHOUT WARRANTY OF ANY 
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+IN THE SOFTWARE.
+</code></pre>
+
+<h3>Contributing</h3>
+
+<p>Just fork and submit a pull request ;)</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/citruspi">citruspi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
