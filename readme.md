@@ -8,7 +8,7 @@ There are numerous uses for this:
 
 - get an SMS whenever someone uses root to log into SSH
 - get an SMS whenever your web application crashes
-- get an SMS whenver Nginx or another service goes down
+- get an SMS whenever Nginx or another service goes down
 - etc.
 
 You can pretty much adapt this to any situation.
@@ -47,7 +47,7 @@ If you want to run it on Heroku (as I did), just add the `Procfile` and push it 
 
 #### Papertrail Side:
 
-The first step is to set up an alert - [there's a tutorial here](http://help.papertrailapp.com/kb/how-it-works/alerts).
+The first step is to setup an alert - [there's a tutorial here](http://help.papertrailapp.com/kb/how-it-works/alerts).
 
 Then, set the Webhook for the alert to [domain.com/sentry](), the URL for the Sentry app. I would suggest settings the Frequency to Every Minute so that you get alerts as fast as possible.
 
@@ -57,7 +57,7 @@ Zinc is open source and is distributed under the MIT License:
 	Copyright Â© 2012 Mihir Singh <me@mihirsingh.com>
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of 
-	this software and associated documentation files (the â€œSoftwareâ€), to deal in 
+	this software and associated documentation files (the "Software"), to deal in 
 	the Software without restriction, including without limitation the rights to 
 	use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of 
 	the Software, and to permit persons to whom the Software is furnished to do 
