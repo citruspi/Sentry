@@ -54,7 +54,7 @@ Then, set the Webhook for the alert to [domain.com/sentry](), the URL for the Se
 ### License
 Zinc is open source and is distributed under the MIT License:
 
-	Copyright Â© 2012 Mihir Singh <me@mihirsingh.com>
+	Copyright © 2012 Mihir Singh <me@mihirsingh.com>
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of 
 	this software and associated documentation files (the "Software"), to deal in 
