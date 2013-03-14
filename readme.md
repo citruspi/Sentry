@@ -52,7 +52,7 @@ The first step is to setup an alert - [there's a tutorial here](http://help.pape
 Then, set the Webhook for the alert to [domain.com/sentry](), the URL for the Sentry app. I would suggest settings the Frequency to Every Minute so that you get alerts as fast as possible.
 
 ### License
-Zinc is open source and is distributed under the MIT License:
+Sentry is open source and is distributed under the MIT License:
 
 	Copyright © 2012 Mihir Singh <me@mihirsingh.com>
 
